@@ -1,0 +1,168 @@
+---
+title: "Pengaruh Tingkat Pengangguran Kepada Tingkat Kemiskinan di Indonesia"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Emeraldi Sentara"
+date: 2024-01-08
+format:
+  html: default
+  docx: default
+---
+
+![](Politeknik-APP-Logo-768x768.png)
+
+## 1 Pendahuluan
+
+### 1.1 Latar belakang
+
+Pengangguran dan kemiskinan adalah dua hal yang sudah ada dari dulu dan sulit dihilangkan. Mengatasi tingkat pengangguran sama pentingnya dengan mengurangi tingkat kemiskinan, karena pengangguran dapat menyebabkan meningkatnya tingkat kemiskinan. Pendapatan merupakan faktor yang sangat penting dalam menentukan tingkat kesejahteraan dan kemakmuran masyarakat. Namun, bagaimana jika seseorang tidak bekerja? maka bisa dipastikan dia tidak akan memiliki pendapatan.
+
+Secara teori, jika seseorang memiliki pekerjaan, maka ia akan bekerja dan mendapatkan pendapatan/uang yang bisa diharapkan cukup untuk memenuhi kebutuhan pokok. Jika kebutuhan pokok terpenuhi, maka orang tersebut tidak bisa dikatakan dalam golongan orang miskin. Dari teori ini dapat disimpulkan bahwa peningkatan angka pengangguran juga akan meningkatkan angka kemiskinan, atau sebaliknya.
+
+### 1.2 Ruang lingkup
+
+Ruang lingkup pada bahasan ini yaitu seperti pada judul yang penulis teliti yaitu Pengaruh Tingkat Pengangguran Kepada Tingkat Kemiskinan di Indonesia. Semua data yang digunakan pada penelitian ini merupakan data dari tahun 2023 menggunakan persentase yang didapat dari BPS.
+
+### 1.3 Rumusan Masalah
+
+1.  Apakah tingkat pengangguran bisa mempengaruhi tingkat kemiskinan di Indonesia?
+
+2.  Jika iya, seberapa berpengaruh?
+
+### 1.4 Tujuan dan manfaat penelitian
+
+Tujuan dari penelitian ini untuk mengetahui apakah tingkat pengangguran bisa mempengaruhi tingkat kemiskinan di Indonesia.
+
+Manfaat dari penelitian supaya pembaca mendapat wawasan baru mengenai seberapa berpengaruh tingkat kemiskinan dan pengangguran di Indonesia.
+
+### 1.5 Package
+
+```{r}
+#| warning: false
+#| echo: true
+library(readxl)
+library(ggplot2)
+library(dplyr)
+```
+
+## 2. Studi pustaka
+
+Karena pada intinya tujuan dari pembangunan yaitu untuk memajukan kemakmuran masyarakat dan meminimalisir jumlah penduduk miskin (Rah Adi Fahmi et al., 2018).
+
+Kemiskinan adalah suatu situasi dimana seseorang atau rumah tangga mengalami kesulitan untuk memenuhi kebutuhan dasar, sementara lingkungan penduduknya kurang memberikan peluang untuk meningkatkan kesejahteraan secara berkesinambungan atau untuk keluar dari kerentanan (Cahyat, 2007: 4)
+
+Pengangguran adalah suatu keadaan dimana sesorang yang tergolong dalam angkatan kerja ingin mendapatkan pekerjaan tetapi belum memperolehnya (Sukirno., 2008)
+
+## 3. Metode penelitian
+
+### Data
+
+| No  | Provinsi             | Tingkat Kemiskinan | Tingkat Pengangguran |
+|-----|----------------------|--------------------|----------------------|
+| 1   | ACEH                 | 14.45              | 5.75                 |
+| 2   | SUMATERA UTARA       | 8.15               | 5.24                 |
+| 3   | SUMATERA BARAT       | 5.95               | 5.90                 |
+| 4   | RIAU                 | 6.68               | 4.25                 |
+| 5   | JAMBI                | 7.58               | 4.50                 |
+| 6   | SUMATERA SELATAN     | 11.78              | 4.53                 |
+| 7   | BENGKULU             | 14.04              | 3.21                 |
+| 8   | LAMPUNG              | 11.11              | 4.18                 |
+| 9   | KEP. BANGKA BELITUNG | 4.52               | 3.89                 |
+| 10  | KEP. RIAU            | 5.69               | 7.61                 |
+| 11  | DKI JAKARTA          | 4.44               | 7.57                 |
+| 12  | JAWA BARAT           | 7.62               | 7.89                 |
+| 13  | JAWA TENGAH          | 10.77              | 5.24                 |
+| 14  | DI YOGYAKARTA        | 11.04              | 3.58                 |
+| 15  | JAWA TIMUR           | 10.35              | 4.33                 |
+| 16  | BANTEN               | 6.17               | 7.97                 |
+| 17  | BALI                 | 4.25               | 3.73                 |
+| 18  | NUSA TENGGARA BARAT  | 13.85              | 3.73                 |
+| 19  | NUSA TENGGARA TIMUR  | 19.96              | 3.10                 |
+| 20  | KALIMANTAN BARAT     | 6.71               | 4.52                 |
+| 21  | KALIMANTAN TENGAH    | 5.11               | 3.84                 |
+| 22  | KALIMANTAN SELATAN   | 4.29               | 3.95                 |
+| 23  | KALIMANTAN TIMUR     | 6.11               | 6.37                 |
+| 24  | KALIMANTAN UTARA     | 6.45               | 4.10                 |
+| 25  | SULAWESI UTARA       | 7.38               | 6.19                 |
+| 26  | SULAWESI TENGAH      | 12.41              | 3.49                 |
+| 27  | SULAWESI SELATAN     | 8.70               | 5.26                 |
+| 28  | SULAWESI TENGGARA    | 11.43              | 3.66                 |
+| 29  | GORONTALO            | 15.15              | 3.07                 |
+| 30  | SULAWESI BARAT       | 11.49              | 3.04                 |
+| 31  | MALUKU               | 16.42              | 6.08                 |
+| 32  | MALUKU UTARA         | 6.46               | 4.60                 |
+| 33  | PAPUA BARAT          | 20.49              | 5.53                 |
+| 34  | PAPUA                | 26.03              | 3.49                 |
+
+![](logobps.png)\
+Data yang saya gunakan adalah ***Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah (Persen)*** dan ***Tingkat Pengangguran Terbuka Menurut Provinsi (Persen)*** pada BPS.
+
+```{r}
+library(readxl)
+dat<-read_excel("D:/Kuliah/Semester 3/Metodologi Penelitian/File Upload/Data UAS.xlsx")
+head(dat)
+```
+
+```{r}
+library(readxl)
+dat<-read_excel("D:/Kuliah/Semester 3/Metodologi Penelitian/File Upload/Data UAS.xlsx") 
+library("ggplot2")
+library("dplyr")
+library("readxl")
+reg1<-lm(KY~PX,data=dat)
+ggplot(data=dat,aes(x=PX,y=KY)) +
+  geom_point(color="purple",size=2) + 
+  scale_color_viridis_c() +
+  labs(title="tabel 1. Tingkat Pengangguran Kepada Persentase Kemiskinan di Indonesia",
+       x="Tingkat Pengangguran",
+       y="Tingkat Kemiskinan",
+       caption = "sumber: Badan Pusat Statistik") +
+  theme_classic()
+
+```
+
+### 3.2 Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini bermaksud mencari hubungan antara Tingkat Pengangguran (X) dan Tingkat Kemiskinan (Y). Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah Tingkat Kemiskinan dan $x_t$ adalah Tingkat Pengangguran.
+
+## 4. Pembahasan
+
+### 4.1 Pembahasan masalah
+
+Karena pada penelitian ini saya menggunakan OLS, saya hanya menghubungkan Tingkat Kemiskinan dengan Tingkat Pengangguran di Indonesia.
+
+Tampilannya seperti ini
+
+```{r}
+library(readxl)
+dat<-read_excel("D:/Kuliah/Semester 3/Metodologi Penelitian/File Upload/Data UAS.xlsx")
+head(dat)
+```
+
+### 4.2 Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+reg1<-lm(KY~PX,data=dat)
+summary(reg1)
+```
+
+## 5. Kesimpulan
+
+Setiap peningkatan dalam Tingkat Pengangguran dengan diasumsikan nilainya 1, maka memiliki penurunan sebanyak 1.1986 persen pada Tingkat Kemiskinan. Dapat disimpulkan bahwa ternyata tingkat pengangguran memiliki pengaruh yang sangat sedikit terhadap tingkat kemiskinan.
+
+## 6. Referensi
+
+Utami, N. D., Nurfalah, R., & Desmawan, D. (2021). Analisis Adanya Pengaruh Tingkat Pengangguran Terhadap  Tingkat Kemiskinan Kabupaten/Kota di Provinsi Banten  Tahun 2021. *EBISMEN*, 162--175.
+
+Adawiyah, S. E. (2020). KEMISKINAN DAN FAKOR-FAKTOR PENYEBABNYA. *KHIDMAT SOSIAL*, *Volume 1 Nomor 1*.
+
+Ishak, K. (n.d.). *FAKTOR-FAKTOR YANG MEMPENGARUHI PENGANGGURAN DAN  INFLIKASINYA TERHADAP INDEK PEMBANGUNAN DI INDONESIA*.
+
+Indonesia, B. P. S. (n.d.-a). *Persentase Penduduk Miskin (P0) Menurut Provinsi dan Daerah---Tabel Statistik*. Retrieved January 7, 2024, from <https://www.bps.go.id/id/statistics-table/2/MTkyIzI=/persentase-penduduk-miskin--maret-2023.html>
+
+Indonesia, B. P. S. (n.d.-b). *Tingkat Pengangguran Terbuka Menurut Provinsi---Tabel Statistik*. Retrieved January 7, 2024, from <https://www.bps.go.id/id/statistics-table/2/NTQzIzI=/tingkat-pengangguran-terbuka--agustus-2023.html>
